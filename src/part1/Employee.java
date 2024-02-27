@@ -9,25 +9,33 @@ package part1;
  *
  * @author Marce
  */
+
+// Employee Class represents an employee with atributes name, email and employee number.
+// Each employee is assigned a unique employee number
 public class Employee {
-    
+
+// Instance fields    
     private String name;
     private String email;
     private int empNum;
-    
+
+// Static field   
     private static int nextEmpNum = 1;
-    
+
+// Constructuor for default values
     public Employee() {
         this.name = "Employee Name";
         this.email = "employee@email.com";
     }
     
+// Constructor for initializing fields with values passed as parameters
     public Employee(String name, String email) {
         this.name = name;
         this.email = email;
         this.empNum = nextEmpNum++;
     }
 
+// Methods for getting name, email and empNum
     public String getName() {
         return name;
     }
