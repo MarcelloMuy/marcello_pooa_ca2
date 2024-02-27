@@ -15,12 +15,12 @@ package part1;
 public class Employee {
 
 // Instance fields    
-    private String name;
-    private String email;
-    private int empNum;
+    public String name;
+    public String email;
+    public int empNum;
 
 // Static field   
-    private static int nextEmpNum = 1;
+    public static int nextEmpNum = 1;
 
 // Constructuor for default values
     public Employee() {
