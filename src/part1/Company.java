@@ -15,7 +15,12 @@ public class Company {
 //  Instance field for company name    
     public String companyName;
     
-//  Create an arrayList to store Employee objects 
+//  Create an ArrayList to store Employee objects 
     ArrayList<Employee> staff = new ArrayList<>();
 
+// Constructor for initializing field
+    public Company(String companyName) {
+        this.companyName = companyName;
+    }
+    
 }
