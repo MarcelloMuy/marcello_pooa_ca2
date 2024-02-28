@@ -18,9 +18,9 @@ public class Company {
 //  Create an ArrayList to store Employee objects 
     ArrayList<Employee> staff = new ArrayList<>();
 
-// Constructor for initializing field
-    public Company(String companyName) {
-        this.companyName = companyName;
+// Deafault Constructor for initializing campanyName field
+    public Company() {
+        this.companyName = "Gnómes Ltd";
     }
-    
+ 
 }
