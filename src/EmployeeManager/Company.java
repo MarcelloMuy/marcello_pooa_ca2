@@ -5,6 +5,7 @@
 package EmployeeManager;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -36,5 +37,21 @@ public class Company {
 //  Method for returning the number of items in staff ArrayList
     public int getStaffNumber() {
         return staff.size();
+    }
+    
+//    Uses an iterator to iterates the staff Arraylist, 
+//    and return name of employees with employee number above an specific number
+    public void listEmployees(int employeeNumber) {
+//        Iterator
+        Iterator<Employee> iterator = staff.iterator();
+        
+//        Will run until iterator has no more elements
+        while (iterator.hasNext()) {
+            Employee employee = iterator.next();
+//            If employee number is above an specific number returns employee name
+            if (employee.getEmpNum() > employeeNumber) {
+                System.out.println("Name: " + employee.getName());
+            }
+        }
     }
 }

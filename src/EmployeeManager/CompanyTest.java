@@ -17,9 +17,13 @@ public class CompanyTest {
         
 //        Test add new staff
         company.addnewStaff(new Employee("Bob Marley", "bm@gmail.com"));
+        company.addnewStaff(new Employee("Mark Cuban", "mc@gmail.com"));
         
 //        Test get staff number
         System.out.println("Number of employees: " + company.getStaffNumber());
+        
+//        Test listEmployees, return all employees with employee number above 1
+        company.listEmployees(1);
     }
     
 }
