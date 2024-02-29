@@ -29,7 +29,7 @@ public class Company {
         this.companyName = name;
     }
 
-//  Method for adding new employee to staff ArrayList
+//  Method for adding a new employee to staff ArrayList
     public void addnewStaff(Employee newEmployee) {
         staff.add(newEmployee);
     }
@@ -39,8 +39,8 @@ public class Company {
         return staff.size();
     }
 
-//    Uses an iterator to iterates the staff Arraylist, 
-//    and return name of employees with employee number above an specific number
+//    Uses an iterator to iterate the staff Arraylist, 
+//    and return the name of employees with the employee number above a specific number
     public void listEmployees(int employeeNumber) {
 //        Iterator
         Iterator<Employee> iterator = staff.iterator();
@@ -48,7 +48,7 @@ public class Company {
 //        Will run until iterator has no more elements
         while (iterator.hasNext()) {
             Employee employee = iterator.next();
-//            If employee number is above an specific number returns employee name
+//            If the employee number is above a specific number returns employee name
             if (employee.getEmpNum() > employeeNumber) {
                 System.out.println("Name: " + employee.getName());
             }

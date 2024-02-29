@@ -8,7 +8,8 @@ package EmployeeManager;
  *
  * @author Marce
  */
-// Employee Class represents an employee with atributes name, email and employee number.
+// Employee Class represents an employee with attributes name,
+// email and employee number.
 // Each employee is assigned a unique employee number
 public class Employee {
 
@@ -20,7 +21,7 @@ public class Employee {
 // Static field   
     public static int nextEmpNum = 1;
 
-// Constructuor for default values
+// Constructor for default values
     public Employee() {
         this.name = "Employee Name";
         this.email = "employee@email.com";
@@ -33,7 +34,7 @@ public class Employee {
         this.empNum = nextEmpNum++;
     }
 
-// Methods for getting name, email and empNum
+// Methods for getting a name, email and empNum
     public String getName() {
         return name;
     }

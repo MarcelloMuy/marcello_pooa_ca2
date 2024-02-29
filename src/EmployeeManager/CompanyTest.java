@@ -12,7 +12,7 @@ public class CompanyTest {
 
     public static void main(String[] args) {
 
-//        Test company New company
+//        Test create a new company
         Company company = new Company("Test Company");
 
 //        Test add new staff
