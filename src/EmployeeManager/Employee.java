@@ -4,12 +4,10 @@ package EmployeeManager;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author Marce
  */
-
 // Employee Class represents an employee with atributes name, email and employee number.
 // Each employee is assigned a unique employee number
 public class Employee {
@@ -27,7 +25,7 @@ public class Employee {
         this.name = "Employee Name";
         this.email = "employee@email.com";
     }
-    
+
 // Constructor for initializing fields with values passed as parameters
     public Employee(String name, String email) {
         this.name = name;
@@ -39,11 +37,11 @@ public class Employee {
     public String getName() {
         return name;
     }
-    
+
     public String getEmail() {
         return email;
     }
-    
+
     public int getEmpNum() {
         return empNum;
     }

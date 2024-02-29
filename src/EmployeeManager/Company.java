@@ -12,10 +12,10 @@ import java.util.Iterator;
  * @author Marce
  */
 public class Company {
-    
+
 //  Instance field for company name    
     public String companyName;
-    
+
 //  Create an ArrayList to store Employee objects 
     ArrayList<Employee> staff = new ArrayList<>();
 
@@ -33,18 +33,18 @@ public class Company {
     public void addnewStaff(Employee newEmployee) {
         staff.add(newEmployee);
     }
-    
+
 //  Method for returning the number of items in staff ArrayList
     public int getStaffNumber() {
         return staff.size();
     }
-    
+
 //    Uses an iterator to iterates the staff Arraylist, 
 //    and return name of employees with employee number above an specific number
     public void listEmployees(int employeeNumber) {
 //        Iterator
         Iterator<Employee> iterator = staff.iterator();
-        
+
 //        Will run until iterator has no more elements
         while (iterator.hasNext()) {
             Employee employee = iterator.next();
