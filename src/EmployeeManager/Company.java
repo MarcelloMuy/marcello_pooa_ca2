@@ -54,4 +54,33 @@ public class Company {
             }
         }
     }
+
+    public void becomeManager(int empNum, String username, String password) {
+//        Iterates through the staff
+        Iterator<Employee> iterator = staff.iterator();
+        
+        boolean found = false;
+
+        while (iterator.hasNext()) {
+            Employee employee = iterator.next();
+            if (employee.getEmpNum() == empNum) {
+                if (!employee.isManager()) {
+                    Manager manager = new Manager(employee.getName(), employee.getEmail(), username, password);
+
+                    employee.setManager(manager);
+                    System.out.println("Employee " + employee.getName() + " has manager status now.");
+                } else {
+                    System.out.println("Employee " + empNum + " has manager status already!");
+                }
+                
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("The employee " + empNum + " was not found.");
+        }
+
+    }
+
 }
