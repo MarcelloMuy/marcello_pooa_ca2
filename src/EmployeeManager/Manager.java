@@ -23,4 +23,21 @@ public class Manager extends Employee {
         this.username = username;
         this.password = password;
     }
+    
+//    Get username
+    public String getUsername(){
+        return username;
+    }
+//    Get password
+    public String getPassword() {
+        return password;
+    }
+//    Set username
+    public void setUsername(String username) {
+        this.username = username;
+    }
+//    Set password
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
