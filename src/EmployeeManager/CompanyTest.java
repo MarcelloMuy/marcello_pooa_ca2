@@ -26,7 +26,7 @@ public class CompanyTest {
 //        Test listEmployees, return all employees with employee number above 1
         company.listEmployees(1);
 
-        company.becomeManager(3, "Gnomeo", "smurf");
+        company.becomeManager(0, "Gnomeo", "smurf");
     }
 
 }

@@ -4,6 +4,7 @@
  */
 package marcello_pooa_ca2;
 
+
 /**
  *
  * @author Marce
@@ -14,7 +15,7 @@ public class Marcello_pooa_ca2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic 
+        
     }
     
 }
