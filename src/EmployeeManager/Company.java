@@ -14,10 +14,10 @@ import java.util.Iterator;
 public class Company {
 
 //  Instance field for company name    
-    public String companyName;
+    private String companyName;
 
 //  Create an ArrayList to store Employee objects 
-    ArrayList<Employee> staff = new ArrayList<>();
+    private ArrayList<Employee> staff = new ArrayList<>();
 
 //  Default Constructor for initializing campanyName field
     public Company() {

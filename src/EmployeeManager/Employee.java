@@ -14,9 +14,9 @@ package EmployeeManager;
 public class Employee {
 
 // Instance fields for all employees   
-    public String name;
-    public String email;
-    public int empNum;
+    private String name;
+    private String email;
+    private int empNum;
 //  Instance field for manager
     private Manager manager;
 

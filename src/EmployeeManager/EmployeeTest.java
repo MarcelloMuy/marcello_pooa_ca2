@@ -35,7 +35,7 @@ public class EmployeeTest {
 //     Iterates through the projectGroup array and
 //     display employees with "empNum" above the value of variable "m"
         for (Employee employee : projectGroup) {
-            if (employee.empNum > m) {
+            if (employee.getEmpNum() > m) {
                 System.out.println("Name: " + employee.getName());
             }
         }
