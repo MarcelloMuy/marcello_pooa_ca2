@@ -30,15 +30,12 @@ public class ConsoleMenu {
 
 //      Calls the login method
         Manager managerlogin = login(company);
-        
-        if (managerlogin !=null){
-            
-//            Prints the manager menu
-            System.out.println("\nStaff Manager Menu:");
-            System.out.println("1. View current staff");
-            System.out.println("2. Add new staff");
-            System.out.println("3. Exit program");
-            
+
+        if (managerlogin != null) {
+
+//         Calls display menu method
+            displayMenu();
+
 //           While loop with switch cases for the menu options
             Scanner scanner = new Scanner(System.in);
             while (true) {
@@ -56,7 +53,7 @@ public class ConsoleMenu {
 //                        Invalid option trigers the default message
                     case 3:
 //                        Option for exiting the program
-                        System.out.println("You extit the program.");
+                        System.out.println("You exit the program.");
                         System.exit(0);
                     default:
                         System.out.println("invalid option. Please enter a valid option.");
@@ -66,36 +63,56 @@ public class ConsoleMenu {
 
     }
 //    Method for manager login
-
     public static Manager login(Company company) {
-        
-        System.out.println("Welcome to the " + company.getCompanyName() + " manager menu!");
-        System.out.println("Please type your credentials below");
-//       Display message asking for Username
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Username: ");
-        String username = scanner.nextLine();
+//        While loop to keep runing the menu if user type an invalid credential
+        while (true) {
+            System.out.println("Welcome to the " + company.getCompanyName() + " manager menu!");
+            System.out.println("Please type your credentials below or type 'exit' to exit the program");
+//       Display message asking for Username
+            System.out.println("Username: ");
+            String username = scanner.nextLine();
+//        Exit the program if user types exit
+            if ("exit".equals(username)) {
+                System.out.println("You exit the program.");
+                System.exit(0);
+            }
 //      Display message asking for Password
-        System.out.println("Password: ");
-        String password = scanner.nextLine();
+            System.out.println("Password: ");
+            String password = scanner.nextLine();
+//        Exit the program if user types exit
+            if ("exit".equals(password)) {
+                System.out.println("You exit the program.");
+                System.exit(0);
+            }
 //        Check if creditials are matching
-        if ("Gnomeo".equals(username) && "smurf".equals(password)) {
-//            Manager are logged in
-            System.out.println("You are logged in!");
-            return new Manager("name", "email", username, password);
-        } else {
+            if ("Gnomeo".equals(username) && "smurf".equals(password)) {
+//            Manager is logged in
+                System.out.println("You are logged in!");
+                return new Manager("name", "email", username, password);
+            } else {
 //            Wrong or invalid credentials
-            System.out.println("Invalid credentials. Exiting...");
-            return null;
+                System.out.println("Invalid credentials. Please try again.");
+            }
         }
     }
+
+//    Method for displaying menu
+    public static void displayMenu() {
+//         Prints the manager menu
+        System.out.println("\nStaff Manager Menu:");
+        System.out.println("1. View current staff");
+        System.out.println("2. Add new staff");
+        System.out.println("3. Exit program");
+    }
 //    Method for adding new Staff
+
     public static void addNewStaff(Company company) {
-        Scanner scanner= new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 //        Display menu messages for name and email
         System.out.println("Enter new employee name: ");
         String name = scanner.nextLine();
-        
+
         System.out.println("Enter new employee email: ");
         String email = scanner.nextLine();
 //        Create new employee
