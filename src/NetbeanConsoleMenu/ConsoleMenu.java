@@ -42,7 +42,7 @@ public class ConsoleMenu {
             Scanner scanner = new Scanner(System.in);
             while (true) {
                 displayMenu();
-                System.out.println("Choose option: 1, 2 or 3 ");
+                System.out.println("Choose option: 1, 2, 3 or 4 ");
                 int option = scanner.nextInt();
                 switch (option) {
 //                    Display list of employees that have employee number above 0
@@ -52,13 +52,17 @@ public class ConsoleMenu {
                     case 2:
 //                        Calls method for adding new staff
                         addNewStaff(company);
-                        break;
-//                        Invalid option trigers the default message
+                        break;  
                     case 3:
+//                        Calls method for removing staff
+                        removeStaff(company);
+                        break;
+                    case 4:
 //                        Option for exiting the program
                         System.out.println("\nYou exit the program.");
                         System.exit(0);
                     default:
+//                        Invalid option trigers the default message
                         System.out.println("\ninvalid option. Please enter a valid option.");
                 }
             }
@@ -107,10 +111,10 @@ public class ConsoleMenu {
         System.out.println("\nStaff Manager Menu:");
         System.out.println("1. View current staff");
         System.out.println("2. Add new staff");
-        System.out.println("3. Exit program");
+        System.out.println("3. Remove staff");
+        System.out.println("4. Exit program");
     }
 //    Method for adding new Staff
-
     public static void addNewStaff(Company company) {
         Scanner scanner = new Scanner(System.in);
 
@@ -132,6 +136,26 @@ public class ConsoleMenu {
         } else {
 //            Display failure message if boolean is false
             System.out.println("\nFailed to add " + newEmployee.getName() + ". Invalid email address.");
+        }
+    }
+    
+//    Method for removing staff
+    public static void removeStaff(Company company) {
+        Scanner scanner = new Scanner(System.in);
+
+//        Display menu message for employee number
+        System.out.println("Enter employee number: ");
+        int empNum = scanner.nextInt();
+
+//        Remove employee
+        boolean staffRemovedSuccessfully = company.removeStaff(empNum);
+
+//       Display success message if boolean is true
+        if (staffRemovedSuccessfully) {
+            System.out.println("\nEmployee " + empNum + " was removed from staff list!");
+        } else {
+//            Display failure message if boolean is false
+            System.out.println("\nEmployee " + empNum + " not found.");
         }
     }
 
