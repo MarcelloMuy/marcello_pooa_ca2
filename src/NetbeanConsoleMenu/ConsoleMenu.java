@@ -30,6 +30,33 @@ public class ConsoleMenu {
 
 //      Calls the login method
         Manager managerlogin = login();
+        
+        if (managerlogin !=null){
+            
+//            Prints the manager menu
+            System.out.println("\nStaff Manager Menu:");
+            System.out.println("1. View current staff");
+            System.out.println("2. Add new staff");
+            
+//           While loop with switch cases for the menu options
+            Scanner scanner = new Scanner(System.in);
+            while (true) {
+                System.out.println("Choose an option: ");
+                int option = scanner.nextInt();
+                switch (option) {
+//                    Display list of employees that have employee number above 0
+                    case 1:
+                        company.listEmployees(0);
+                        break;
+                    case 2:
+                        System.out.println("Add new staff method");
+                        break;
+//                        Invalid option trigers the default message
+                    default:
+                        System.out.println("invalid option. Please enter a valid option.");
+                }
+            }
+        }
 
     }
 //    Method for manager login
