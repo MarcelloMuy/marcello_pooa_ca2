@@ -24,9 +24,14 @@ public class CompanyTest {
         System.out.println("Number of employees: " + company.getStaffNumber());
 
 //        Test listEmployees, return all employees with employee number above 1
-        company.listEmployees(1);
+        company.listEmployees(0);
 
-        company.becomeManager(0, "Gnomeo", "smurf");
+        company.becomeManager(1, "Gnomeo", "smurf");
+
+//        Test remove staff
+        company.removeStaff(1);
+        company.listEmployees(0);
+
     }
 
 }

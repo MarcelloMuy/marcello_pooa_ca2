@@ -39,6 +39,9 @@ public class Company {
     public boolean addnewStaff(Employee newEmployee) {
 //        Check if new employee has a valid email address
         if (isValidEmail(newEmployee.getEmail())) {
+//            Generate the employee number only if email is valid
+            newEmployee.setEmpNum(Employee.nextEmpNum++);
+//            Add Staff
             staff.add(newEmployee);
             return true;
         } else {
@@ -54,6 +57,21 @@ public class Company {
         Matcher matcher = pattern.matcher(email);
 //        Returns true if the email matches the patter object
         return matcher.matches();
+    }
+//    Method for removing staff
+    public boolean removeStaff(int empNum) {
+//        Iterator
+        Iterator<Employee> iterator = staff.iterator();
+        
+        while (iterator.hasNext()) {
+            Employee employee = iterator.next();
+//            Remove staff if employee is found
+            if (employee.getEmpNum() == empNum) {
+                iterator.remove();
+                return true;
+            }
+        }
+        return false;
     }
     
 //  Method for returning the number of items in staff ArrayList

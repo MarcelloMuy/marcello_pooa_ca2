@@ -35,14 +35,14 @@ public class Employee {
     public Employee(String name, String email) {
         this.name = name;
         this.email = email;
-        this.empNum = nextEmpNum++;
+        
     }
 //    constructor for initializing employee manager 
 
     public Employee(String name, String email, Manager manager) {
         this.name = name;
         this.email = email;
-        this.empNum = nextEmpNum++;
+       
         this.manager = manager;
     }
 
@@ -72,5 +72,9 @@ public class Employee {
 //    Method for setting employee a manager
     public void setManager(Manager manager) {
         this.manager = manager;
+    }
+//    Method for setting employee number
+    public void setEmpNum(int empNum) {
+        this.empNum = empNum;
     }
 }
