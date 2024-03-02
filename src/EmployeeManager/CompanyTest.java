@@ -16,7 +16,7 @@ public class CompanyTest {
         Company company = new Company("Test Company");
 
 //        Test add new staff
-        company.addnewStaff(new Employee("Bob Marley", "bm@gmail.com"));
+        company.addnewStaff(new Employee("Bob Marley", "bm@..gmail.com"));
         company.addnewStaff(new Employee("Mark Cuban", "mc@gmail.com"));
         company.addnewStaff(new Employee("Elon Musk", "em@gmail.com"));
 

@@ -6,6 +6,8 @@ package EmployeeManager;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -34,10 +36,26 @@ public class Company {
     }
     
 //  Method for adding a new employee to staff ArrayList
-    public void addnewStaff(Employee newEmployee) {
-        staff.add(newEmployee);
+    public boolean addnewStaff(Employee newEmployee) {
+//        Check if new employee has a valid email address
+        if (isValidEmail(newEmployee.getEmail())) {
+            staff.add(newEmployee);
+            return true;
+        } else {
+            System.out.println(newEmployee.getEmail() + " is an invalid email addess. Employee not added.");
+            return false;
+        } 
     }
-
+//    Method for validating email addess
+    private static boolean isValidEmail(String email) {
+//        Regex string validation
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+//        Returns true if the email matches the patter object
+        return matcher.matches();
+    }
+    
 //  Method for returning the number of items in staff ArrayList
     public int getStaffNumber() {
         return staff.size();
@@ -50,6 +68,7 @@ public class Company {
         Iterator<Employee> iterator = staff.iterator();
 
 //        Will run until iterator has no more elements
+        System.out.println("");
         while (iterator.hasNext()) {
             Employee employee = iterator.next();
 //            If the employee number is above a specific number returns employee name
