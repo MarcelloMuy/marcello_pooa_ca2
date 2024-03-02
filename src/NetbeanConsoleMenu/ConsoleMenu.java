@@ -17,6 +17,10 @@ public class ConsoleMenu {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+            
+//       GitHub repository for this project: https://github.com/MarcelloMuy/marcello_pooa_ca2
+
+
 //      Create company with deafult values
         Company company = new Company();
 
