@@ -49,7 +49,8 @@ public class ConsoleMenu {
                         company.listEmployees(0);
                         break;
                     case 2:
-                        System.out.println("Add new staff method");
+//                        Calls method for adding new staff
+                        addNewStaff(company);
                         break;
 //                        Invalid option trigers the default message
                     default:
@@ -80,7 +81,22 @@ public class ConsoleMenu {
             System.out.println("Invalid credentials. Exiting...");
             return null;
         }
-
+    }
+//    Method for adding new Staff
+    private static void addNewStaff(Company company) {
+        Scanner scanner= new Scanner(System.in);
+//        Display menu messages for name and email
+        System.out.println("Enter new employee name: ");
+        String name = scanner.nextLine();
+        
+        System.out.println("Enter new employee email: ");
+        String email = scanner.nextLine();
+//        Create new employee
+        Employee newEmployee = new Employee(name, email);
+//        Add new employee
+        company.addnewStaff(newEmployee);
+//        Display success message
+        System.out.println(name + " was added to the staff list!");
     }
 
 }
