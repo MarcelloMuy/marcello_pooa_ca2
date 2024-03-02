@@ -58,15 +58,15 @@ public class Company {
     public void becomeManager(int empNum, String username, String password) {
 //      Iterates through the staff
         Iterator<Employee> iterator = staff.iterator();
-        
+
 //      Boolean to control found and not found employees
         boolean found = false;
-        
+
 //      While loop to run until iterator has no more elements
         while (iterator.hasNext()) {
             Employee employee = iterator.next();
 //          Check for an employee with an specific number
-            if (employee.getEmpNum() == empNum && empNum >=1) {
+            if (employee.getEmpNum() == empNum && empNum >= 1) {
 //                If Employee is not a manager, give manager status
                 if (!employee.isManager()) {
                     Manager manager = new Manager(employee.getName(), employee.getEmail(), username, password);
