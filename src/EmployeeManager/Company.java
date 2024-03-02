@@ -28,7 +28,11 @@ public class Company {
     public Company(String name) {
         this.companyName = name;
     }
-
+    
+    public String getCompanyName() {
+        return companyName;
+    }
+    
 //  Method for adding a new employee to staff ArrayList
     public void addnewStaff(Employee newEmployee) {
         staff.add(newEmployee);

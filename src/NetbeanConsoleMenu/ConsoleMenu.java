@@ -29,7 +29,7 @@ public class ConsoleMenu {
         company.addnewStaff(new Employee("Elon Musk", "em@gmail.com"));
 
 //      Calls the login method
-        Manager managerlogin = login();
+        Manager managerlogin = login(company);
         
         if (managerlogin !=null){
             
@@ -37,11 +37,12 @@ public class ConsoleMenu {
             System.out.println("\nStaff Manager Menu:");
             System.out.println("1. View current staff");
             System.out.println("2. Add new staff");
+            System.out.println("3. Exit program");
             
 //           While loop with switch cases for the menu options
             Scanner scanner = new Scanner(System.in);
             while (true) {
-                System.out.println("Choose an option: ");
+                System.out.println("Choose option: 1, 2 or 3 ");
                 int option = scanner.nextInt();
                 switch (option) {
 //                    Display list of employees that have employee number above 0
@@ -53,6 +54,10 @@ public class ConsoleMenu {
                         addNewStaff(company);
                         break;
 //                        Invalid option trigers the default message
+                    case 3:
+//                        Option for exiting the program
+                        System.out.println("You extit the program.");
+                        System.exit(0);
                     default:
                         System.out.println("invalid option. Please enter a valid option.");
                 }
@@ -62,8 +67,10 @@ public class ConsoleMenu {
     }
 //    Method for manager login
 
-    private static Manager login() {
-
+    public static Manager login(Company company) {
+        
+        System.out.println("Welcome to the " + company.getCompanyName() + " manager menu!");
+        System.out.println("Please type your credentials below");
 //       Display message asking for Username
         Scanner scanner = new Scanner(System.in);
         System.out.println("Username: ");
@@ -83,7 +90,7 @@ public class ConsoleMenu {
         }
     }
 //    Method for adding new Staff
-    private static void addNewStaff(Company company) {
+    public static void addNewStaff(Company company) {
         Scanner scanner= new Scanner(System.in);
 //        Display menu messages for name and email
         System.out.println("Enter new employee name: ");
